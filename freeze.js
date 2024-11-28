@@ -18,6 +18,7 @@ var grid = new ej.grids.Grid({
     allowReordering: true,
     allowExcelExport: true,
     showColumnChooser: true,
+    width: 1200,
     filterSettings: { type: 'Menu' },
     pageSettings: { pageCount: 7, pageSizes: true },
     editSettings: { allowAdding: true, allowEditing: true, allowDeleting: true, mode: 'Normal' },
@@ -26,12 +27,14 @@ var grid = new ej.grids.Grid({
         'Copy', 'Edit', 'Delete', 'Save', 'Cancel', 'PdfExport', 'ExcelExport',
         'CsvExport', 'FirstPage', 'PrevPage', 'LastPage', 'NextPage'],
     columns: [
-        { field: 'OrderID', headerText: 'Order ID', isPrimaryKey: true, textAlign: 'Right', width: 120, validationRules: { required: true }, freeze: 'Left'},
-        { field: 'CustomerID', headerText: 'Customer ID', width: 120, editType: 'dropdownedit' },
-        { field: 'Freight', headerText: 'Frieght', width: 120, format: 'C2', editType: 'numericedit', textAlign: 'Right' },
-        { field: 'OrderDate', headerText: 'Order Date', width: 120, format: 'yMd', editType: 'datepickeredit', textAlign: 'Right', freeze: 'Fixed'  },
-        { field: 'ShipName', headerText: 'Ship Name', width: 120, clipMode: 'EllipsisWithTooltip' },
-        { field: 'ShipCity', headerText: 'Ship City', width: 120, validationRules: { required: true, minLength: 3, maxLength: 20 },freeze: 'Right' },
+        { field: 'OrderID', headerText: 'Order ID', isPrimaryKey: true, textAlign: 'Right', width: 220, validationRules: { required: true }, freeze: 'Left'},
+        { field: 'CustomerID', headerText: 'Customer ID', width: 180, editType: 'dropdownedit' },
+        { field: 'Freight', headerText: 'Frieght', width: 200, format: 'C2', editType: 'numericedit', textAlign: 'Right' },
+        { field: 'OrderDate', headerText: 'Order Date', width: 220, format: 'yMd', editType: 'datepickeredit', textAlign: 'Right', freeze: 'Fixed'  },
+        { field: 'ShipName', headerText: 'Ship Name', width: 220, clipMode: 'EllipsisWithTooltip' },
+        { field: 'ShipCity', headerText: 'Ship City', width: 220, validationRules: { required: true, minLength: 3, maxLength: 20 } },
+        { field: 'ShipCountry', headerText: 'Ship Country', width: 180 },
+        { field: 'ShipRegion', headerText: 'Ship Region', width: 180, type: 'string',freeze: 'Right'},
     ],
     aggregates: [{
         columns: [{
@@ -81,9 +84,9 @@ grid.appendTo('#Grid');
 
     document.getElementById('styleToggle').onclick = function () {
         if (theme.checked) {
-            themeLink.href = 'tailwind4-dark.css'; // Use the correct file extension
+            themeLink.href = 'tailwind3-dark.css'; // Use the correct file extension
         } else {
-            themeLink.href = 'tailwind4.css';
+            themeLink.href = 'tailwind3.css';
         }
     };
 
